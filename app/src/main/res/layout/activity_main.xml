@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        android:id="@+id/parentLinearLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/buttonPaint"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:onClick="onBtnPaintClick"
+                app:srcCompat="@drawable/paint" />
+
+            <ImageButton
+                android:id="@+id/buttonText"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="match_parent"
+                android:scaleType="fitCenter"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:onClick="onBtnTextClick"
+                app:srcCompat="@drawable/text" />
+
+            <ImageButton
+                android:id="@+id/buttonClear"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:onClick="onBtnClearClick"
+                app:srcCompat="@drawable/clear" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            app:layout_constraintTop_toBottomOf="@id/parentLinearLayout"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/red"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:tag="red"
+                    android:backgroundTint="@color/red"
+                    android:visibility="invisible"
+                    tools:ignore="NestedWeights" />
+
+                <Button
+                    android:id="@+id/yellow"
+                    android:layout_width="15dp"
+                    android:visibility="invisible"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:tag="yellow"
+                    android:backgroundTint="@color/yellow"
+                    tools:ignore="NestedWeights" />
+
+                <Button
+                    android:id="@+id/green"
+                    android:visibility="invisible"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_width="15dp"
+                    android:tag="green"
+                    android:backgroundTint="@color/green"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                     />
+
+                <Button
+                    android:id="@+id/blue"
+                    android:layout_marginStart="8dp"
+                    android:visibility="invisible"
+                    android:tag="black"
+                    android:backgroundTint="@color/blue"
+                    android:layout_marginEnd="16dp"
+                    android:layout_width="15dp"
+
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                     />
+                <Button
+                    android:id="@+id/purple"
+                    android:layout_marginStart="8dp"
+                    android:visibility="invisible"
+                    android:backgroundTint="@color/purple"
+                    android:tag="purple"
+                    android:layout_marginEnd="16dp"
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    />
+                <Button
+                    android:id="@+id/black"
+                    android:layout_marginStart="8dp"
+                    android:visibility="invisible"
+                    android:backgroundTint="@color/black"
+                    android:layout_marginEnd="16dp"
+                    android:layout_width="15dp"
+                    android:tag="black"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.example.mysketchbook.PaintArea
+            android:id="@+id/paint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.example.mysketchbook.TextTool
+            android:id="@+id/textTool"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
